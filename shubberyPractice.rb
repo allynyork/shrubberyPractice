@@ -1,6 +1,7 @@
 # it's a branch. or more like a shrubbery
 # obtain walking directions from Google
  require 'watir-webdriver'
+ require 'csv'
  browser = Watir::Browser.new #:chrome
  browser.goto "https://www.google.com/maps/"
 
@@ -41,15 +42,19 @@ browser.a(:class => 'cards-directions-details-link').click
 sleep 2
 
 # read directions
-
-stepOne = browser.div(:class => 'numbered-step-content').text 
-puts stepOne
+#step_one = browser.div(:class => 'numbered-step-content').text 
+step_one = browser.div(:class => 'directions-mode-step').text
+puts step_one
 
 # how many lines of directions are there?
 # iterate through each line of directions
 # save directions to csv file 
 
 # Your solution must output the data into a csv file directions_data.csv with details for each step on one line. 
+CSV.open("directions_data.csv", "wb") do |csv|
+  csv << ["directions"]
+  csv << [step_one]
+end
 
 # document the method for setting up and running your automation
 

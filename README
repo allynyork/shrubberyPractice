@@ -1,5 +1,7 @@
 https://github.com/renewablefunding/qa_codechallenge 
 
+WebDriver is required for any browser (e.g. Chrome) other than Firefox
+
 done: 
 open browser
 go to google maps 
