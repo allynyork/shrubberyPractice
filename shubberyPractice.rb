@@ -13,9 +13,6 @@ if search_box_exist == true
 else 
   puts 'boo! i was expecting a directions search box'
 end
-
-# is enabled?
-browser.button(:id => 'searchbox-directions').enabled?
  
 # open the direction search box
 browser.button(:id => 'searchbox-directions').click
@@ -23,13 +20,10 @@ browser.button(:id => 'searchbox-directions').click
 # sometimes the page doesn't render immediately. let's allow for that
 sleep 1
 
-# google maps defaults to putting out address in as the destination. let's fix that
-# b.button(:class => "widget-directions-reverse").click
-
 # start point
 browser.text_field(:placeholder => 'Choose starting point, or click on the map...').set '400 SW 6th Ave #902, Portland, OR 97204'
 # end point 
-# i deserve a drink. let's go to the Whiskey Library  1124 SW Alder St, Portland, OR 97205 
+# i deserve a drink. let's go to the Whiskey Library 1124 SW Alder St, Portland, OR 97205 
 browser.text_field(:placeholder => 'Choose destination, or click on the map...').set '1124 SW Alder St, Portland, OR 97205'
 
 sleep 1
