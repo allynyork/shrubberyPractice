@@ -55,6 +55,8 @@ sleep 2
 # save directions to csv file 
 # Your solution must output the data into a csv file directions_data.csv with details for each step on one line. 
 
+# document the method for setting up and running your automation
+
 
 # bonus points
 # allowing for data driven tests pulling addresses from an external file. (csv, or yml) 
