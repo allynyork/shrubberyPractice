@@ -42,11 +42,13 @@ sleep 2
 
 # read directions
 
+stepOne = browser.div(:class => 'numbered-step-content').text 
+puts stepOne
+
 # how many lines of directions are there?
 # iterate through each line of directions
-
-
 # save directions to csv file 
+
 # Your solution must output the data into a csv file directions_data.csv with details for each step on one line. 
 
 # document the method for setting up and running your automation
