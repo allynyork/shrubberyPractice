@@ -1,0 +1,18 @@
+https://github.com/renewablefunding/qa_codechallenge 
+
+done: 
+open browser
+go to google maps 
+start point 
+end point
+get directions
+
+still to do: 
+read directions 
+save directions to CSV 
+document the method for setting up and running your automation
+
+
+other: 
+data driven 
+screenshot (tentatively done)
