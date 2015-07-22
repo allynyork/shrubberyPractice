@@ -1,9 +1,17 @@
 # it's a branch. or more like a shrubbery
 # obtain walking directions from Google
- require 'watir-webdriver'
- require 'csv'
- browser = Watir::Browser.new #:chrome
- browser.goto "https://www.google.com/maps/"
+require 'watir-webdriver'
+require 'csv'
+require 'yaml'
+
+laden = begin
+  YAML.load(File.open("european_swallow.yaml"))
+rescue ArgumentError => e
+  puts "Could not parse YAML: #{e.message}"
+end
+
+browser = Watir::Browser.new #:chrome
+browser.goto "https://www.google.com/maps/"
 
 sleep 2 
 
@@ -22,18 +30,15 @@ browser.button(:id => 'searchbox-directions').click
 sleep 1
 
 # start point
-browser.text_field(:placeholder => 'Choose starting point, or click on the map...').set '400 SW 6th Ave #902, Portland, OR 97204'
-# end point 
-# i deserve a drink. let's go to the Whiskey Library 1124 SW Alder St, Portland, OR 97205 
-browser.text_field(:placeholder => 'Choose destination, or click on the map...').set '1124 SW Alder St, Portland, OR 97205'
+browser.text_field(:placeholder => 'Choose starting point, or click on the map...').set laden.fetch('start')
+# i deserve a drink. let's go to the Whiskey Library 
+browser.text_field(:placeholder => 'Choose destination, or click on the map...').set laden.fetch('end')
 
 sleep 1
 
 # get directions 
-browser.div(:class => 'directions-walk-icon').click
-# when doing data driven test, pass the travel mode icon as a parameter so that we can easily select 
-# browser.div(:class => 'directions-drive-icon').click
-# or browser.div(:class => 'directions-transit-icon').click
+browser.div(:class => laden.fetch('mode')).click
+
 sleep 1
 
 # expand directions
@@ -46,6 +51,8 @@ sleep 2
 step_one = browser.div(:class => 'directions-mode-step-container').text
 #step_one = browser.div(:class => 'directions-mode-step').text
 puts step_one 
+
+#browser.text_field(:id => "text").value
 
 #step_two = browser.divs[1].when_present.text
 #puts step_two

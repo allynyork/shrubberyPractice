@@ -1,0 +1,7 @@
+african_swallow:
+
+	addresses:
+		renewable_funding: '400 SW 6th Ave #902, Portland, OR 97204' 
+		whiskey_library: '1124 SW Alder St, Portland, OR 97205'
+
+	mode: directions-walk-icon
