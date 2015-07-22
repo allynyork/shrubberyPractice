@@ -43,8 +43,28 @@ sleep 2
 
 # read directions
 #step_one = browser.div(:class => 'numbered-step-content').text 
-step_one = browser.div(:class => 'directions-mode-step').text
-puts step_one
+step_one = browser.div(:class => 'directions-mode-step-container').text
+#step_one = browser.div(:class => 'directions-mode-step').text
+puts step_one 
+
+#step_two = browser.divs[1].when_present.text
+#puts step_two
+
+#step_two = browser.div(:class => 'directions-mode-step-container').jsinstance(:index => 1)
+#puts step_two
+
+#step_index1 = browser.div(:index, 2 => 'jsinstance').text
+#puts step_index1
+
+
+#step_index1 = browser.div(:class => 'directions-mode-step').stepindex
+#puts step_index1
+#step_index2 = browser.div(:class => 'directions-mode-step-stepindex').text
+#puts step_index2
+#step_index3 = browser.div(:class => 'directions-mode-step.stepindex').text
+#puts step_index3
+#step_index4 = browser.div(:class => 'stepindex').text
+#puts step_index4
 
 # how many lines of directions are there?
 # iterate through each line of directions
