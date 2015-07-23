@@ -1,5 +1,9 @@
+# this is no longer current 
+# please use shrubbery.rb
+
+
+
 # it's a branch. or more like a shrubbery
-# obtain walking directions from Google
 require 'watir-webdriver'
 require 'csv'
 require 'yaml'
@@ -60,39 +64,4 @@ end
 # obtain a screenshot of the map with the route for a "future requirement".
 browser.screenshot.save 'shubberyscreenshot.png'
 
-# everything from here on down can be deleted
 
-# other things to consider
-# obtain directions from acquired company 
-# are directions in same format as directions_data.csv ? if not, then format 
-# compare directions betwixt google and acquired company 
-
-
-# failed bits and pieces
-
-#step_one = browser.div(:class => 'numbered-step-content').text 
-#step_one = browser.div(:class => 'directions-mode-step-container').text
-#step_one = browser.div(:class => 'directions-mode-step').text
-#puts step_one 
-
-
-#browser.text_field(:id => "text").value
-
-#step_two = browser.divs[1].when_present.text
-#puts step_two
-
-#step_two = browser.div(:class => 'directions-mode-step-container').jsinstance(:index => 1)
-#puts step_two
-
-#step_index1 = browser.div(:index, 2 => 'jsinstance').text
-#puts step_index1
-
-
-#step_index1 = browser.div(:class => 'directions-mode-step').stepindex
-#puts step_index1
-#step_index2 = browser.div(:class => 'directions-mode-step-stepindex').text
-#puts step_index2
-#step_index3 = browser.div(:class => 'directions-mode-step.stepindex').text
-#puts step_index3
-#step_index4 = browser.div(:class => 'stepindex').text
-#puts step_index4

@@ -1,0 +1,4 @@
+# where did you get the coconuts?
+start: '400 SW 6th Ave #902, Portland, OR 97204'
+end: '1124 SW Alder St, Portland, OR 97205' 
+mode: directions-walk-icon #other options are directions-drive-icon and directions-transit-icon
