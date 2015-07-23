@@ -6,6 +6,8 @@ included please find, this README (woo hoo!), shrubbery.rb (which is my program)
 WebDriver is required for any browser (e.g. Chrome) other than Firefox
 currently chrome is commented out, adjust as suits you
 
+i've used Watir for automation, and so that will need to be installed whereever you're running this from
+
 from the command line % ruby shrubbery.rb 
 
 the program will execute. a browser is opened. start and end points and travel mode are loaded from the yaml file. 
