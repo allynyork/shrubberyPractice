@@ -1,3 +1,4 @@
 start: '400 SW 6th Ave #902, Portland, OR 97204'
 end: '1124 SW Alder St, Portland, OR 97205'
 mode: directions-walk-icon
+# this tests end: '1124 SE Alder St, Portland' with a lot more steps in the directions 

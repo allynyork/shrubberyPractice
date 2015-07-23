@@ -47,10 +47,34 @@ browser.a(:class => 'cards-directions-details-link').click
 sleep 2
 
 # read directions
+all_directions = browser.div(:class => 'descriptionless').text
+puts all_directions # later i can remove this, just want to see it on the command line before saving to csv
+
+# Your solution must output the data into a csv file directions_data.csv with details for each step on one line. 
+CSV.open("directions_data.csv", "wb") do |csv|
+  csv << ["directions"]
+  csv << [all_directions]
+end
+
+
+# obtain a screenshot of the map with the route for a "future requirement".
+browser.screenshot.save 'shubberyscreenshot.png'
+
+# everything from here on down can be deleted
+
+# other things to consider
+# obtain directions from acquired company 
+# are directions in same format as directions_data.csv ? if not, then format 
+# compare directions betwixt google and acquired company 
+
+
+# failed bits and pieces
+
 #step_one = browser.div(:class => 'numbered-step-content').text 
-step_one = browser.div(:class => 'directions-mode-step-container').text
+#step_one = browser.div(:class => 'directions-mode-step-container').text
 #step_one = browser.div(:class => 'directions-mode-step').text
-puts step_one 
+#puts step_one 
+
 
 #browser.text_field(:id => "text").value
 
@@ -72,28 +96,3 @@ puts step_one
 #puts step_index3
 #step_index4 = browser.div(:class => 'stepindex').text
 #puts step_index4
-
-# how many lines of directions are there?
-# iterate through each line of directions
-# save directions to csv file 
-
-# Your solution must output the data into a csv file directions_data.csv with details for each step on one line. 
-CSV.open("directions_data.csv", "wb") do |csv|
-  csv << ["directions"]
-  csv << [step_one]
-end
-
-# document the method for setting up and running your automation
-
-
-# bonus points
-# allowing for data driven tests pulling addresses from an external file. (csv, or yml) 
-
-# obtain a screenshot of the map with the route for a "future requirement".
-browser.screenshot.save 'shubberyscreenshot.png'
-
-
-# other things to consider
-# obtain directions from acquired company 
-# are directions in same format as directions saved above? if not, then format 
-# compare directions betwixt google and acquired company 
