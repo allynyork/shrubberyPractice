@@ -32,19 +32,12 @@ b.text_field(:placeholder => 'Choose starting point, or click on the map...').se
 # i deserve a drink. let's go to the Whiskey Library 
 b.text_field(:placeholder => 'Choose destination, or click on the map...').set laden.fetch('end')
 
-
-#sleep 1
-
 # select travel mode and get directions
 b.div(:class => laden.fetch('mode')).click
-
-#sleep 1
 
 # expand directions
 b.a(:class => 'cards-directions-details-link').wait_until_present
 b.a(:class => 'cards-directions-details-link').click 
-
-#sleep 2
 
 # read directions
 directions = b.div(:class => 'descriptionless').wait_until_present
